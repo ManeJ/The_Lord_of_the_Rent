@@ -14,12 +14,26 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Add a warrior", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "War chief", "#", class: "nav-link" %>
-      </li>
+      <div class="nav-action-link">
+        <li class="nav-item">
+          <%= link_to "#", class: "nav-item-logo" do %>
+            <%= image_tag "https://image.flaticon.com/icons/svg/10/10747.svg" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Add a warrior", "#", class: "nav-link" %>
+        </li>
+      </div>
+      <div class="nav-action-link">
+        <li class="nav-item">
+          <%= link_to "#", class: "nav-item-logo" do %>
+            <%= image_tag "https://image.flaticon.com/icons/svg/10/10652.svg" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "War chief", "#", class: "nav-link" %>
+        </li>
+      </div>
       <li class="nav-item log" id="btn-sign-up">
         <%= link_to "Sign-up", "#", class: "nav-link" %>
       </li>
