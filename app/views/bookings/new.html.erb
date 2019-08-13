@@ -1,0 +1,7 @@
+<%= simple_form_for [@warrior, @booking] do |f| %>
+  <%= f.input :place %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :total_price %>
+  <%= f.submit "Book", class: "btn btn-primary"%>
+<% end %>

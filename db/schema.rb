@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_12_153638) do
+ActiveRecord::Schema.define(version: 2019_08_13_104316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "place"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "total_price"
+    t.string "status", default: "pending"
+    t.bigint "user_id"
+    t.bigint "warrior_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["warrior_id"], name: "index_bookings_on_warrior_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +37,28 @@ ActiveRecord::Schema.define(version: 2019_08_12_153638) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "warriors", force: :cascade do |t|
+    t.string "nickname"
+    t.string "specialty"
+    t.string "race"
+    t.string "weapon"
+    t.integer "price"
+    t.string "photo"
+    t.string "address"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_warriors_on_user_id"
+  end
+
+  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "warriors"
+  add_foreign_key "warriors", "users"
 end
