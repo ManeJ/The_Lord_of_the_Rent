@@ -1,4 +1,5 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background-color: #EBEAEB;
 }
@@ -8,8 +9,32 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 48px;
+  width: 64px;
+}
+.navbar-lewagon .nav-item-logo img {
+  width: 28px;
+}
+
+.navbar-lewagon .nav-item {
+  margin-left: 8px;
+}
+
+#navbarDropdown {
+  margin-left: 16px;
+}
+
+.navbar-lewagon .nav-title {
+  margin-right: auto;
 }
 
 .navbar-lewagon .nav-title h1 {
+  margin: auto;
+  font-size: 36px;
 }
+
+.nav-action-link {
+  display: flex;
+  margin-right: 16px;
+}
+
+

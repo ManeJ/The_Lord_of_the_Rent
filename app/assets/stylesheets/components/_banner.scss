@@ -3,14 +3,14 @@
   background-size: cover;
   background-position: center;
   padding: 280px 0;
-
+  margin-top: -16px;
 }
 
 .banner h1 {
   margin: 0;
   color: #722329;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 40px;
+  font-size: 48px;
   font-weight: black;
 }
 
@@ -19,4 +19,8 @@
   color: #97393D;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner .container {
+  margin-left: 48px;
 }
