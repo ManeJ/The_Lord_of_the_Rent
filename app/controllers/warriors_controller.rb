@@ -13,8 +13,9 @@ class WarriorsController < ApplicationController
   end
 
   def create
-    current_user
+    @user = current_user
     @warrior = Warrior.new(warrior_params)
+    @warrior.user = @user
     if @warrior.save
       redirect_to user_path(@user)
     else
