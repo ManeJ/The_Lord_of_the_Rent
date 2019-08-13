@@ -1,0 +1,63 @@
+body {
+  color: #232b2b;
+}
+
+h1, h2, h3 {
+  font-family: Raleway, Helvetica, sans-serif;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+p{
+  font-size: 1.25rem;
+}
+
+.card-warrior {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+}
+
+.card-warrior-attributes span{
+  color: #232b2b;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.card-warrior-attributes i { 
+  margin: 0 0.5rem;
+}
+
+.card-warrior img {
+  height: 30rem;
+  object-fit:contain;
+}
+
+.card-warrior-infos {
+  padding: 1rem;
+}
+.card-warrior-infos span {
+  color: gold;
+}
+
+.card-warrior:hover {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card-warrior-description span {
+  margin-left: 0.5rem;
+}
