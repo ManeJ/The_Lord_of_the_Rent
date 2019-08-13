@@ -1,45 +1,21 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1542403764-19e1bb75cc75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
   <div class="container">
     <h1>Don't fear the Dragon anymore</h1>
-    <p>Join the Guild and offer you the services of the most skilled and ruthless warriors in the Middle Earth</p>
+    <p><strong>Join the Guild</strong> and offer you the services of the most <strong>skilled</strong> and <strong>ruthless</strong> warriors in the <strong>Middle Earth</strong></p>
     <a class="btn btn-ghost" href="#">Rent a Mercenary</a>
   </div>
 </div>
 
+<% Warrior.all.each do |warrior|%>
 <div class="cards">
   <div class="card-warrior-index">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
     <div class="card-warrior-index-infos">
       <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
+        <h2><%= warrior.nickname %></h2>
+        <p><%= warrior.race %></p>
       </div>
-      <h2 class="card-warrior-index-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-warrior-index-user avatar-bordered" />
+      <h2 class="card-warrior-index-pricing"><%= warrior.price %>€</h2>
     </div>
   </div>
-
-  <div class="card-warrior-index">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-warrior-index-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
-      <h2 class="card-warrior-index-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-warrior-index-user avatar-bordered" />
-    </div>
-  </div>
-
-  <div class="card-warrior-index">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-warrior-index-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
-      <h2 class="card-warrior-index-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-warrior-index-user avatar-bordered" />
-    </div>
-  </div>
-</div>
+<% end %>
