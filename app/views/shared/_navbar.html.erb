@@ -34,11 +34,11 @@
           <%= link_to "War chief", "#", class: "nav-link" %>
         </li>
       </div>
-      <li class="nav-item log bordeaux-bkg rounded">
-        <%= link_to "Sign-up", "#", class: "nav-link white-text" %>
+      <li class="nav-item log" id="btn-sign-up">
+        <%= link_to "Sign-up", new_user_registration_path, class: "nav-link" %>
       </li>
       <li class="nav-item log" id="btn-log-in">
-        <%= link_to "Log-in", "#", class: "nav-link" %>
+        <%= link_to "Log-in", new_user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "http://img.over-blog-kiwi.com/1/93/13/35/20161030/ob_92d57a_sauron.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

@@ -6,40 +6,16 @@
   </div>
 </div>
 
+<% Warrior.all.each do |warrior|%>
 <div class="cards">
   <div class="card-warrior-index">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
     <div class="card-warrior-index-infos">
       <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
+        <h2><%= warrior.nickname %></h2>
+        <p><%= warrior.race %></p>
       </div>
-      <h2 class="card-warrior-index-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-warrior-index-user avatar-bordered" />
+      <h2 class="card-warrior-index-pricing"><%= warrior.price %>€</h2>
     </div>
   </div>
-
-  <div class="card-warrior-index">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-warrior-index-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
-      <h2 class="card-warrior-index-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-warrior-index-user avatar-bordered" />
-    </div>
-  </div>
-
-  <div class="card-warrior-index">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-warrior-index-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
-      <h2 class="card-warrior-index-pricing">£99.99</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-warrior-index-user avatar-bordered" />
-    </div>
-  </div>
-</div>
+<% end %>
