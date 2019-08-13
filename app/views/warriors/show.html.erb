@@ -1,10 +1,10 @@
 <div class="container">
   <div class="card-warrior-show">
-  <%= cl_image_tag @warrior.photo, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @warrior.photo, crop: :fill %>
     <div class="card-warrior-show-infos">
       <div class="card-warrior-show-description">
         <h1><%= @warrior.nickname %></h1>
-        <p><strong>Price:</strong><span>78 gold coins</span></p>
+        <p><strong>Price:</strong><span><strong>78 gold coins</strong></span></p>
         <p>War is life. Life is fun! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quasi.</p>
       </div>
       <div class="card-warrior-show-attributes">
@@ -15,5 +15,5 @@
       </div>
     </div>
   </div>
-  <%= link_to "All warriors", warriors_path, class: "btn btn-primary"%>
+  <%= link_to "book", new_warrior_booking_path(params["id"]) %>
 </div>
