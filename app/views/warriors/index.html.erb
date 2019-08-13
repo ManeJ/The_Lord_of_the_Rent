@@ -1,7 +1,6 @@
 <h1>warrior</h1>
 <ul>
 <% @warriors.each do |warrior| %>
-  <li><%= warrior %></li>
-  <%= link_to "show warrior", warrior_path(warrior.id)%>
+  <li><%= warrior %></li> <%= link_to 'show', warrior_path(warrior.id) %>
 <% end %>
 </ul>

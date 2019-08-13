@@ -1,29 +1,29 @@
-.card-warrior {
+.card-warrior-index {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-warrior > img {
+.card-warrior-index > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-warrior h2 {
+.card-warrior-index h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-warrior p {
+.card-warrior-index p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-warrior .card-warrior-infos {
+.card-warrior-index .card-warrior-index-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -31,7 +31,7 @@
   position: relative;
 }
 
-.card-warrior-infos .card-warrior-user {
+.card-warrior-index-infos .card-warrior-index-user {
   position: absolute;
   right: 16px;
   top: -20px;
