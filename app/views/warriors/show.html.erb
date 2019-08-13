@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card-warrior-show">
+  <%= cl_image_tag @warrior.photo, height: 300, width: 400, crop: :fill %>
+    <div class="card-warrior-show-infos">
+      <div class="card-warrior-show-description">
+        <h1><%= @warrior.nickname %></h1>
+        <p><strong>Price:</strong><span>78 gold coins</span></p>
+        <p>War is life. Life is fun! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quasi.</p>
+      </div>
+      <div class="card-warrior-show-attributes">
+        <p><span>Species:</span>human</p>
+        <p><span>Specialty:</span>lorem</p>
+        <p><span>Weapon:</span><i class="fas fa-khanda"></i><i class="fas fa-shield-alt"></i></p>
+        <p><span>Address:</span>Valhalla</p>
+      </div>
+    </div>
+  </div>
+  <%= link_to "All warriors", warriors_path, class: "btn btn-primary"%>
+</div>
