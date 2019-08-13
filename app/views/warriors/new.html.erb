@@ -1,4 +1,4 @@
-<%= simple_form_for [current_user, @warrior] do |f| %>
+<%= simple_form_for [@user, @warrior] do |f| %>
   <%= f.input :nickname %>
   <%= f.input :specialty %>
   <%= f.input :race %>
