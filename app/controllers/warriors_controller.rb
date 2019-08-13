@@ -17,7 +17,7 @@ class WarriorsController < ApplicationController
     @warrior = Warrior.new(warrior_params)
     @warrior.user = @user
     if @warrior.save
-      redirect_to user_path(@user)
+      redirect_to warrior_path(@warrior)
     else
       render :new
     end
@@ -39,10 +39,15 @@ class WarriorsController < ApplicationController
     redirect_to warriors_path
   end
 
+  def owner
+    @warriors = current_user.warriors
+  end
+
+
   private
 
   def set_warrior
-    @warrior = warrior.find(params[:id])
+    @warrior = Warrior.find(params[:id])
   end
 
   def warrior_params
