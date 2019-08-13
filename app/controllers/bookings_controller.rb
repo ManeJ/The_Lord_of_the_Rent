@@ -28,6 +28,10 @@ class BookingsController < ApplicationController
   def delete
   end
 
+  def display
+  end
+
+
   private
 
   def booking_params
