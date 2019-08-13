@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
 Warrior.destroy_all
+User.destroy_all
 
 30.times do
   User.create!(first_name:Faker::Movies::LordOfTheRings.character, last_name:Faker::Movies::LordOfTheRings.character,email:Faker::Internet.email,password: 'jaures')
@@ -18,10 +20,13 @@ race = ["elf", "hobbit", "dwarf", "orc", "humain","ent", "uruk-hai", "nazgul"]
 
 5.times do
   warrior = Warrior.new(
-    nickname: Faker::Movies::LordOfTheRings.character,
-    race: race.sample,
-    specialty: specialty.sample,
-    user: User.all.sample
+    nickname: Faker::Movies::LordOfTheRings.unique.character,
+    race: races.sample,
+    specialty: specialties.sample,
+    user: User.all.sample,
+    address: Faker::Address.full_address,
+    weapon: weapons.sample,
+    price: rand(50..300)
   )
   warrior.remote_photo_url = photo.sample
   warrior.save!
