@@ -1,4 +1,6 @@
-
+.container {
+  padding-bottom: 2rem;
+}
 .card-warrior-show {
   display: flex;
   align-items: center;
@@ -16,6 +18,7 @@
 }
 
 .card-warrior-show-attributes i { 
+  font-size: 1rem;
   margin: 0 0.5rem;
 }
 
@@ -28,14 +31,14 @@
 }
 .card-warrior-show  {
   p{
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
   h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   img {
-    object-fit: contain;
-    width: 33vw;
+    object-fit: cover;
+    width: 40vw;
     height: 100%;
   }
 }

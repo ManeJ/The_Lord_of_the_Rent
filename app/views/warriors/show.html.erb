@@ -4,14 +4,14 @@
     <div class="card-warrior-show-infos">
       <div class="card-warrior-show-description">
         <h1><%= @warrior.nickname %></h1>
-        <p><strong>Price:</strong><span><strong>78 gold coins</strong></span></p>
+        <p><strong>Price:</strong><span><strong><%= @warrior.price %>/strong></span></p>
         <p>War is life. Life is fun! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quasi.</p>
       </div>
       <div class="card-warrior-show-attributes">
-        <p><span>Species:</span>human</p>
-        <p><span>Specialty:</span>lorem</p>
-        <p><span>Weapon:</span><i class="fas fa-khanda"></i><i class="fas fa-shield-alt"></i></p>
-        <p><span>Address:</span>Valhalla</p>
+        <p><span>Species:</span> <%= @warrior.race %></p>
+        <p><span>Specialty:</span><%= @warrior.specialty %></p>
+        <p><span>Weapon:</span><%= @warrior.weapon %></p>
+        <p><span>Address:</span><%= @warrior.address %></p>
       </div>
     </div>
   </div>
