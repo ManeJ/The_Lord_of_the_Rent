@@ -9,33 +9,28 @@
     <h1>The Lord of the Rent</h1>
   </div>
 
-
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <div class="nav-action-link">
         <li class="nav-item">
-          <%= link_to "#", class: "nav-item-logo" do %>
-            <%= image_tag "https://image.flaticon.com/icons/svg/10/10747.svg" %>
+          <%= link_to "#", class: "nav-item-logo nav-link" do %>
+            <div>
+              <%= image_tag "https://image.flaticon.com/icons/svg/10/10747.svg" %> Add a warrior
+            </div>
           <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Add a warrior", "#", class: "nav-link" %>
         </li>
       </div>
       <div class="nav-action-link">
         <li class="nav-item">
-          <%= link_to "#", class: "nav-item-logo" do %>
-            <%= image_tag "https://image.flaticon.com/icons/svg/10/10652.svg" %>
+          <%= link_to "#", class: "nav-item-logo nav-link" do %>
+            <div>
+              <%= image_tag "https://image.flaticon.com/icons/svg/10/10652.svg" %> War chief
+            </div>
           <% end %>
         </li>
-        <li class="nav-item">
-          <%= link_to "War chief", "#", class: "nav-link" %>
-        </li>
       </div>
-      <li class="nav-item log" id="btn-sign-up">
-        <%= link_to "Sign-up", new_user_registration_path, class: "nav-link" %>
+      <li class="nav-item log">
+        <%= link_to "Sign-up", new_user_registration_path, class: "nav-link btn-primary text-white rounded" %>
       </li>
       <li class="nav-item log" id="btn-log-in">
         <%= link_to "Log-in", new_user_session_path, class: "nav-link" %>
