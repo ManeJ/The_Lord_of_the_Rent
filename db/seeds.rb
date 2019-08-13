@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 30.times do
-  User.create(first_name:Faker::Movies::LordOfTheRings.character, last_name:Faker::Movies::LordOfTheRings.character,email:Faker::Internet.email,encrypted_password: 'jaures')
+  User.create(first_name:Faker::Movies::LordOfTheRings.character, last_name:Faker::Movies::LordOfTheRings.character,email:Faker::Internet.email,password: 'jaures')
 end
