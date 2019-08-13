@@ -2,5 +2,6 @@
 <ul>
 <% @warriors.each do |warrior| %>
   <li><%= warrior %></li>
+  <%= link_to "show warrior", warrior_path(warrior.id)%>
 <% end %>
 </ul>

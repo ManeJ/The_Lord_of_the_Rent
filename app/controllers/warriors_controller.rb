@@ -6,6 +6,7 @@ class WarriorsController < ApplicationController
   end
 
   def show
+  
   end
 
   def new
@@ -42,7 +43,7 @@ class WarriorsController < ApplicationController
   private
 
   def set_warrior
-    @warrior = warrior.find(params[:id])
+    @warrior = Warrior.find(params[:id])
   end
 
   def warrior_params
