@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
 Warrior.destroy_all
+User.destroy_all
 
 30.times do
   User.create(first_name:Faker::Movies::LordOfTheRings.character, last_name:Faker::Movies::LordOfTheRings.character,email:Faker::Internet.email,password: 'jaures')
@@ -19,7 +21,7 @@ weapons = ["Bow", "Sword", "Axe", "Hammer", "Teeth", "Bare hands", "Magic"]
 
 5.times do
   warrior = Warrior.new(
-    nickname: Faker::Movies::LordOfTheRings.character,
+    nickname: Faker::Movies::LordOfTheRings.unique.character,
     race: races.sample,
     specialty: specialties.sample,
     user: User.all.sample,
