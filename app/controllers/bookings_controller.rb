@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
   def create
     @user = current_user
-    @warrior = @user.warriors.find(params[:warrior_id])
+    @warrior = Warrior.find(params[:warrior_id])
     @booking = Booking.new(booking_params)
     @booking.user_id = @user.id
     @booking.warrior_id = @warrior.id
