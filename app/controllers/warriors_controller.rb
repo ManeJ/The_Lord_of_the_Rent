@@ -3,9 +3,7 @@ class WarriorsController < ApplicationController
 
   def index
     @warriors = policy_scope(Warrior).order(created_at: :desc)
-
     @geo_warriors = Warrior.geocoded
-
     @markers = @warriors.map do |warrior|
       {
         lat: warrior.latitude,
