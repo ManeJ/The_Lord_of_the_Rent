@@ -13,5 +13,10 @@
   grid-template-columns: 1fr 1fr;
   grid-column: span 2;
   grid-gap: 1rem;
+  margin-top: 0rem;
   margin-bottom: 1rem;
+}
+
+.card-warrior-index-infos h3:hover p:hover {
+  text-decoration: none;
 }
