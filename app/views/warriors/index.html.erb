@@ -1,13 +1,7 @@
-<h1>warriors</h1>
-<ul>
-<% @warriors.each do |warrior| %>
-  <li><%= warrior %></li> <%= link_to 'show', warrior_path(warrior.id) %>
-<% end %>
-</ul>
 <h1>Find a warrior on map</h1>
 <div>
   <div class="cards">
-    <% Warrior.all.each do |warrior|%>
+    <% @geo_warriors.each do |warrior|%>
       <%= link_to warrior_path(warrior) do %>
       <div class="card-warrior-index">
         <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
@@ -21,13 +15,12 @@
       </div>
     <% end %>
     <% end %>
-  </div> 
+  </div>
   <div
   id="map"
   style="width: 50%;
   height: 80vh;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
+  </div>
 </div>

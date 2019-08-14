@@ -1760,6 +1760,15 @@ chalk@^1.1.1:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
+check-files@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/check-files/-/check-files-0.0.2.tgz#79216272e4aeb44c2c1ba417680b7b5cbaa2ac55"
+  integrity sha1-eSFicuSutEwsG6QXaAt7XLqirFU=
+  dependencies:
+    extend "1.2.1"
+    nopt "2.1.2"
+    vow "0.4.1"
+
 chokidar@^2.0.2, chokidar@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.6.tgz#b6cad653a929e244ce8a834244164d241fa954c5"
@@ -2875,6 +2884,11 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
   dependencies:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
+
+extend@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-1.2.1.tgz#a0f5fd6cfc83a5fe49ef698d60ec8a624dd4576c"
+  integrity sha1-oPX9bPyDpf5J72mNYOyKYk3UV2w=
 
 extend@~3.0.2:
   version "3.0.2"
@@ -4884,6 +4898,13 @@ node-sass@^4.12.0:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
   integrity sha1-xkZdvwirzU2zWTF/eaxopkayj/k=
+  dependencies:
+    abbrev "1"
+
+nopt@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/nopt/-/nopt-2.1.2.tgz#6cccd977b80132a07731d6e8ce58c2c8303cf9af"
+  integrity sha1-bMzZd7gBMqB3MdbozljCyDA8+a8=
   dependencies:
     abbrev "1"
 
@@ -7678,6 +7699,11 @@ vm-browserify@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
   integrity sha512-iq+S7vZJE60yejDYM0ek6zg308+UZsdtPExWP9VZoCFCz1zkJoXFnAX7aZfd/ZwrkidzdUZL0C/ryW+JwAiIGw==
+
+vow@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vow/-/vow-0.4.1.tgz#97c816578b2547d59083898bd65a1bff6c016454"
+  integrity sha1-l8gWV4slR9WQg4mL1lob/2wBZFQ=
 
 vt-pbf@^3.1.1:
   version "3.1.1"
