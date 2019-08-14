@@ -1,17 +1,16 @@
-<h1 class ="title-index">Find a warrior</h1>
-
+<h1>Find a warrior on map</h1>
 <div class='warriors-index'>
-  <div class="warriors-index cards-grid">
-    <% @warriors.each do |warrior| %>
+  <div class="cards-grid">
+    <% @warriors.each do |warrior|%>
       <%= link_to warrior_path(warrior) do %>
-        <div class="card-warrior-index">
+      <div class="card-warrior-index">
         <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
       <div class="card-warrior-index-infos">
-        <div class="warrior-name">
+        <div>
           <h3><%= warrior.nickname %></h3>
           <p><%= warrior.race %></p>
         </div>
-        <h3 class="card-warrior-index-pricing"><%= warrior.price %>€ per day</h3>
+      <h3 class="card-warrior-index-pricing"><%= warrior.price %>€</h3>
       </div>
       </div>
     <% end %>
