@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
   def home
-    @warriors_sample = []
-    5.times do
+    sample = []
+    6.times do
       count = Warrior.count
       random_offset = rand(count)
-      random_warrior = User.offset(random_offset).first
-      @warriors_sample << random_warrior
+      random_warrior = Warrior.offset(random_offset).first
+      sample << random_warrior
     end
-    @warriors_sample
+    @warriors_sample = sample.uniq
   end
 end

@@ -6,17 +6,17 @@
   </div>
 </div>
 
-
+<h2 class="text-center mt-3">Check out these awesome warriors you might want to recruit!</h2>
 <div class="cards">
-  <% Warrior.all.each do |warrior|%>
+  <% @warriors_sample.each do |warrior|%>
     <div class="card-warrior-index">
         <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
       <div class="card-warrior-index-infos">
         <div>
-          <h2><%= warrior.nickname %></h2>
+          <h3><%= warrior.nickname %></h3>
           <p><%= warrior.race %></p>
         </div>
-        <h2 class="card-warrior-index-pricing"><%= warrior.price %>€ per day</h2>
+        <h3 class="card-warrior-index-pricing"><%= warrior.price %>€ per day</h3>
       </div>
     </div>
   <% end %>
