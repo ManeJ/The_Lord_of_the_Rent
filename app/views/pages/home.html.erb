@@ -2,20 +2,23 @@
   <div class="container">
     <h1>Don't fear the Dragon anymore</h1>
     <p><strong>Join the Guild</strong> and offer you the services of the most <strong>skilled</strong> and <strong>ruthless</strong> warriors in the <strong>Middle Earth</strong></p>
-    <a class="btn btn-ghost" href="#">Rent a Mercenary</a>
+    <a class="btn btn-ghost" href="#">Found a Mercenary</a>
   </div>
 </div>
 
-<% Warrior.all.each do |warrior|%>
+
 <div class="cards">
-  <div class="card-warrior-index">
-    <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
-    <div class="card-warrior-index-infos">
-      <div>
-        <h2><%= warrior.nickname %></h2>
-        <p><%= warrior.race %></p>
+  <% Warrior.all.each do |warrior|%>
+    <div class="card-warrior-index">
+        <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+      <div class="card-warrior-index-infos">
+        <div>
+          <h2><%= warrior.nickname %></h2>
+          <p><%= warrior.race %></p>
+        </div>
+        <h2 class="card-warrior-index-pricing"><%= warrior.price %>€ per day</h2>
       </div>
-      <h2 class="card-warrior-index-pricing"><%= warrior.price %>€ per day</h2>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
+
