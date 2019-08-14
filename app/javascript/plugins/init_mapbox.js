@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -26,8 +27,9 @@ const initMapbox = () => {
 
     fitMapToMarkers(map, markers);
 
-  } // fin du if
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
 
+  } // fin du if
 
 };
 
