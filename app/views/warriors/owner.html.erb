@@ -1,1 +1,6 @@
 <h1>My warriors</h1>
+<% if policy(Warrior).owner? %>
+  <% @warriors.each do |warrior|%>
+  <%= warrior.nickname %>
+  <% end %>
+<% end %>

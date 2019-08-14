@@ -7,7 +7,7 @@
 <h1>Find a warrior on map</h1>
 <div>
   <div class="cards">
-    <% Warrior.all.each do |warrior|%>
+    <% @geo_warriors.each do |warrior|%>
       <%= link_to warrior_path(warrior) do %>
       <div class="card-warrior-index">
         <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
