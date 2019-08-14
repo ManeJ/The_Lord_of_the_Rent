@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   def new
     @warrior = Warrior.find(params[:warrior_id])
     @booking = Booking.new
+    authorize(@warrior)
   end
 
   def create
@@ -18,6 +19,7 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+    authorize(@warrior)
   end
 
   def show
@@ -28,6 +30,8 @@ class BookingsController < ApplicationController
   end
 
   def display
+    @bookings = current_user.bookings
+    authorize(@bookings)
   end
 
   def edit
