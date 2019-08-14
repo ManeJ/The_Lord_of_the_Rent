@@ -26,7 +26,7 @@
           <%= f.input :weapon, collection: ["Hammer", "Sword", "Teeth", "Bare hands", "Bow", "Axe", "Spear", "Spell", "Knife", "Slingshot", "Fire blast"].sort %>
         </div>
       </div>
-      <%= f.input :address %>
+      <%= f.input :address, { id:"warrior_address" } %>
       <div class="form-actions d-flex justify-content-center">
         <%= f.button :submit, "Add this warrior", { class:"text-white btn-primary rounded" } %>
       </div>

@@ -13,7 +13,7 @@
   <div class="d-flex justify-content-center form-book-warrior">
     <% if policy(Booking).new? %>
       <%= simple_form_for [@warrior, @booking] do |f| %>
-        <%= f.input :place %>
+        <%= f.input :place, label: "Mission location" %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.input :total_price %>
