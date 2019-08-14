@@ -2,11 +2,17 @@ class WarriorsController < ApplicationController
   before_action :set_warrior, only: [:show, :edit, :update, :destroy]
 
   def index
-    @warriors = Warrior.all
+    @warriors = Warrior.geocoded
+
+    @markers = @warriors.map do |warrior|
+      {
+        lat: warrior.latitude,
+        lng: warrior.longitude
+      }
+    end
   end
 
   def show
-  
   end
 
   def new
