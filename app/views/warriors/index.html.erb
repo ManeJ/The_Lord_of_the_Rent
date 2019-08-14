@@ -1,6 +1,8 @@
 <h1>warriors</h1>
+
   <div class="cards">
     <% Warrior.all.each do |warrior|%>
+      <%= link_to warrior_path(warrior) do %>
       <div class="card-warrior-index">
         <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
       <div class="card-warrior-index-infos">
@@ -12,4 +14,5 @@
       </div>
       </div>
     <% end %>
-  </div>
+    <% end %>
+  </div> 
