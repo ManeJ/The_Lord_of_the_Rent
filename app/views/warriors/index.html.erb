@@ -1,6 +1,15 @@
-<h1>warrior</h1>
-<ul>
-<% @warriors.each do |warrior| %>
-  <li><%= warrior %></li> <%= link_to 'show', warrior_path(warrior.id) %>
-<% end %>
-</ul>
+<h1>warriors</h1>
+  <div class="cards">
+    <% Warrior.all.each do |warrior|%>
+      <div class="card-warrior-index">
+        <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+      <div class="card-warrior-index-infos">
+        <div>
+          <h2><%= warrior.nickname %></h2>
+          <p><%= warrior.race %></p>
+        </div>
+      <h2 class="card-warrior-index-pricing"><%= warrior.price %>€</h2>
+      </div>
+      </div>
+    <% end %>
+  </div>
