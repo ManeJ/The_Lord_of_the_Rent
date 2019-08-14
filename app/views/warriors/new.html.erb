@@ -1,11 +1,34 @@
-<%= simple_form_for [@user, @warrior] do |f| %>
-  <%= f.input :nickname %>
-  <%= f.input :specialty %>
-  <%= f.input :race %>
-  <%= f.input :weapon %>
-  <%= f.input :price %>
-  <%= f.input :address %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Add a warrior", class: "btn btn-primary" %>
-<% end %>
+<h1 class="text-center">Add a warrrior</h1>
+<div class="d-flex justify-content-center form-add-warrior">
+    <%= simple_form_for [@user, @warrior] do |f| %>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.input :nickname %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.input :race, collection: ["Elf", "Hobbit", "Dwarf", "Orc", "Human","Ent", "Uruk-hai", "Nazgul"].sort %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.input :specialty, collection: ["Foot soldier", "Berserker", "Thief", "Maiar", "Cavalry", "Archery", "Spy"].sort %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.input :price, label: "Price per day" %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.input :weapon, collection: ["Hammer", "Sword", "Teeth", "Bare hands", "Bow", "Axe", "Spear", "Spell", "Knife", "Slingshot", "Fire blast"].sort %>
+        </div>
+      </div>
+      <%= f.input :address %>
+      <div class="form-actions d-flex justify-content-center">
+        <%= f.button :submit, "Add this warrior", { class:"text-white btn-primary rounded" } %>
+      </div>
+    <% end %>
+</div>
