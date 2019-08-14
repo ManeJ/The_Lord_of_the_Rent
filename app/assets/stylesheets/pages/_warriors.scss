@@ -1,6 +1,3 @@
-.title-index {
-  text-align: center
-}
 .warriors-index {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -8,17 +5,13 @@
   grid-gap: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
-.warriors-index .cards-grid {
+.warriors-index.cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  margin-top: 0rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.card-warrior-index-infos h3:hover p:hover {
-  text-decoration: none;
 }
