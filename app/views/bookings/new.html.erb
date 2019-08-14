@@ -1,9 +1,24 @@
-<% if policy(Booking).new? %>
-  <%= simple_form_for [@warrior, @booking] do |f| %>
-    <%= f.input :place %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :total_price %>
-    <%= f.submit "Book", class: "btn btn-primary"%>
-  <% end %>
-<% end %>
+<h1 class="text-center">Book <%= @warrior.nickname %></h1>
+<div class="d-flex justify-content-center">
+  <div class="card-warrior-index">
+      <%= cl_image_tag @warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+    <div class="card-warrior-index-infos">
+      <div>
+        <h3><%= @warrior.nickname %></h3>
+        <p><%= @warrior.race %></p>
+      </div>
+      <h3 class="card-warrior-index-pricing"><%= @warrior.price %>€ per day</h3>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center form-book-warrior">
+    <% if policy(Booking).new? %>
+      <%= simple_form_for [@warrior, @booking] do |f| %>
+        <%= f.input :place %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :total_price %>
+        <%= f.submit "Book", class: "btn btn-primary"%>
+      <% end %>
+    <% end %>
+  </div>
+</div>
