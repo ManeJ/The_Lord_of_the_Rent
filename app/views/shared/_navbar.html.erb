@@ -13,6 +13,15 @@
     <ul class="navbar-nav mr-auto">
       <div class="nav-action-link">
         <li class="nav-item">
+          <%= link_to warriors_path, class: "nav-item-logo nav-link" do %>
+            <div>
+              <%= image_tag "https://image.flaticon.com/icons/svg/2016/2016966.svg" %> Dark Register
+            </div>
+          <% end %>
+        </li>
+      </div>
+      <div class="nav-action-link">
+        <li class="nav-item">
           <div>
             <% if policy(Warrior).create? %>
             <a class="nav-item-logo nav-link" href= "/warriors/new">

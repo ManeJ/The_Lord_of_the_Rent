@@ -1,33 +1,26 @@
-<h1>warriors</h1>
-<ul>
-<% @warriors.each do |warrior| %>
-  <li><%= warrior %></li> <%= link_to 'show', warrior_path(warrior.id) %>
-<% end %>
-</ul>
 <h1>Find a warrior on map</h1>
-<div>
+<div class='warriors-index'>
   <div class="cards">
-    <% @geo_warriors.each do |warrior|%>
+    <% @warriors.each do |warrior|%>
       <%= link_to warrior_path(warrior) do %>
       <div class="card-warrior-index">
         <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
       <div class="card-warrior-index-infos">
         <div>
-          <h2><%= warrior.nickname %></h2>
+          <h3><%= warrior.nickname %></h3>
           <p><%= warrior.race %></p>
         </div>
-      <h2 class="card-warrior-index-pricing"><%= warrior.price %>€</h2>
+      <h3 class="card-warrior-index-pricing"><%= warrior.price %>€</h3>
       </div>
       </div>
     <% end %>
     <% end %>
   </div>
   <div
-  id="map"
-  style="width: 50%;
-  height: 80vh;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
+    id="map"
+    style="width: 100%;
+    height: 80vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

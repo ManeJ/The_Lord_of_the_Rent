@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize(@booking)
   end
 
   def delete
@@ -37,13 +38,14 @@ class BookingsController < ApplicationController
   def edit
     @booking = Booking.find(params[:id])
     @warrior = current_user.warriors.find(params[:warrior_id])
+    authorize(@booking)
   end
 
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to warrior_booking_path(@booking)
-
+    authorize(@booking)
   end
 
 
