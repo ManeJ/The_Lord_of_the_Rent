@@ -1,6 +1,22 @@
 <h1>Find a warrior on map</h1>
-
-<div
+<div>
+  <div class="cards">
+    <% Warrior.all.each do |warrior|%>
+      <%= link_to warrior_path(warrior) do %>
+      <div class="card-warrior-index">
+        <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+      <div class="card-warrior-index-infos">
+        <div>
+          <h2><%= warrior.nickname %></h2>
+          <p><%= warrior.race %></p>
+        </div>
+      <h2 class="card-warrior-index-pricing"><%= warrior.price %>€</h2>
+      </div>
+      </div>
+    <% end %>
+    <% end %>
+  </div> 
+  <div
   id="map"
   style="width: 50%;
   height: 80vh;"
@@ -8,10 +24,4 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-
-<ul>
-<% @warriors.each do |warrior| %>
-  <li><%= warrior.nickname %></li>
-  <%= link_to 'show', warrior_path(warrior) %>
-<% end %>
-</ul>
+</div>
