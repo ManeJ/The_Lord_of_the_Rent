@@ -1,3 +1,9 @@
+<h1>warriors</h1>
+<ul>
+<% @warriors.each do |warrior| %>
+  <li><%= warrior %></li> <%= link_to 'show', warrior_path(warrior.id) %>
+<% end %>
+</ul>
 <h1>Find a warrior on map</h1>
 <div>
   <div class="cards">

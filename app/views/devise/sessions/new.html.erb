@@ -1,20 +1,32 @@
-<h2>Log in</h2>
+<div class="sign">
+  <div class="d-flex justify-content-center">
+    <div class="signup-pres">
+      <h1>Log in to the Guild</h1>
+      <p>Access to the <strong>bigger catalog</strong> of infamous mercenary.</p>
+      <p><strong>Rent the ones you need</strong> to accomplished perilous Quest.</p>
+      <p>See all your <strong>bookings</strong>.</p>
+      <p><strong>Manage</strong> your warriors as a <strong>powerful War Chief</strong>.</p>
+    </div>
+    <div class="form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div class="form-actions d-flex justify-content-center btn-primary rounded">
+              <%= f.button :submit, "Log in", { class:"text-white" } %>
+            </div>
+      <% end %>
+      <div class="d-flex align-items-center flex-column">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
