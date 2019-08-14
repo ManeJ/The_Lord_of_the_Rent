@@ -1,6 +1,17 @@
-<h1>warrior</h1>
+<h1>Find a warrior on map</h1>
+
+<div
+  id="map"
+  style="width: 50%;
+  height: 80vh;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+
 <ul>
 <% @warriors.each do |warrior| %>
-  <li><%= warrior %></li> <%= link_to 'show', warrior_path(warrior.id) %>
+  <li><%= warrior.nickname %></li>
+  <%= link_to 'show', warrior_path(warrior) %>
 <% end %>
 </ul>
