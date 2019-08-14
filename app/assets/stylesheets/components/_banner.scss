@@ -1,9 +1,14 @@
 .banner {
   background-size: cover;
+  height: 90vh;
   background-position: center;
   padding: 280px 0;
   margin-top: -16px;
   filter: contrast(110%) brightness(110%);
+}
+
+.banner-text{
+  margin: 40px;
 }
 
 .banner h1 {
