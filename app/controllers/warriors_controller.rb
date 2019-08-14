@@ -2,15 +2,15 @@ class WarriorsController < ApplicationController
   before_action :set_warrior, only: [:show, :edit, :update, :destroy]
 
   def index
-    @warriors = Warrior.all
+    @warriors = policy_scope(Warrior).order(created_at: :desc)
   end
 
   def show
-  
   end
 
   def new
     @warrior = Warrior.new
+    authorize(@warrior)
   end
 
   def create
@@ -22,6 +22,7 @@ class WarriorsController < ApplicationController
     else
       render :new
     end
+    authorize(@warrior)
   end
 
 
@@ -42,6 +43,7 @@ class WarriorsController < ApplicationController
 
   def owner
     @warriors = current_user.warriors
+    authorize(@warriors)
   end
 
 
@@ -49,6 +51,7 @@ class WarriorsController < ApplicationController
 
   def set_warrior
     @warrior = Warrior.find(params[:id])
+    authorize(@warrior)
   end
 
   def warrior_params

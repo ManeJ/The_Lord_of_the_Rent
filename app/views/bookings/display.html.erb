@@ -1,6 +1,8 @@
 <h1> Bookings </h1>
 <ul>
-<% current_user.bookings.each do |booking| %>
-<li> <%= booking.place %> </li> <%= link_to 'validate',  edit_warrior_booking_path(booking.warrior_id, booking) %>
+<% if policy(Booking).display? %>
+  <% @bookings.each do |booking| %>
+  <li> <%= booking.place %> </li> <%= link_to 'validate',  edit_warrior_booking_path(booking.warrior_id, booking) %>
+  <% end %>
+  </ul>
 <% end %>
-</ul>
