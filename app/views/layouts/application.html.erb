@@ -12,13 +12,15 @@
   </head>
   <body>
     <div class="page d-flex flex-column justify-content-between">
-      <%= render 'shared/navbar' %>
-      <div class="content">
-        <div class="notif">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+      <div>
+        <%= render 'shared/navbar' %>
+        <div class="content">
+          <div class="notif">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          </div>
+          <%= yield %>
         </div>
-        <%= yield %>
       </div>
       <%= render 'shared/footer' %>
     </div>
