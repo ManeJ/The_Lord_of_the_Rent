@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-  width: 800px;
+  width: 650px;
 }
 
 .card-product img {
@@ -16,13 +16,11 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+  font-size: 1.5rem;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 0.8rem;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -31,4 +29,8 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-product-infos {
+  width: 100%;
 }

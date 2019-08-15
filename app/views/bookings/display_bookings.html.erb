@@ -1,9 +1,23 @@
-<h1>Page de pur tests</h1>
-<ul>
-  <% @warriors.each do |warrior| %>
-    <li><%= warrior.booking.place %></li>
-  <% end %>
-</ul>
+<h1 class="text-center"> My warriors </h1>
+<div class="d-flex justify-content-center">
+
+  <ul>
+    <% if policy(Booking).display_resa? %>
+      <% @warriors.each do |warrior| %>
+        <% warrior.each do |booking| %>
+          <div class="card-product">
+            <%= cl_image_tag booking.warrior.photo %>
+            <div class="card-product-infos">
+              <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
+              <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to "Bookings on my warriors", bookings_warriors_path, class: "dropdown-item" %>
 <div class="dropdown-divider"></div>

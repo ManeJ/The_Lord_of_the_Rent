@@ -1,5 +1,5 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
-  <h2>Your booking details</h2>
+  <h2 class="mt-4">Your booking details</h2>
   <div class="booking-card m-6 p-3 d-block">
     <%= cl_image_tag @booking.warrior.photo.url(:thumbnail), class: "rounded float-left corner-img" %>
     <div class="booking-card-details">
@@ -44,5 +44,6 @@
       </div>
     </div>
   </div>
+  <%= link_to "Back to warriors", warriors_path, class: "mb-4" %>
 </div>
 
