@@ -3,10 +3,10 @@
 }
 .card-warrior-show {
   display: flex;
-  align-items: center;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+  margin-top: 2rem;
   margin-bottom: 2rem;
   height: 80vh ;
 }
@@ -14,15 +14,15 @@
 .card-warrior-show-attributes span{
   color: #232b2b;
   font-weight: 700;
-  margin-right: 0.5rem;
 }
 
-.card-warrior-show-attributes i { 
+.card-warrior-show-attributes i {
   font-size: 1rem;
   margin: 0 0.5rem;
 }
 
 .card-warrior-show-infos {
+  margin: 1rem;
   padding: 1rem;
 }
 
@@ -31,10 +31,7 @@
 }
 .card-warrior-show  {
   p{
-    font-size: 1.25rem;
-  }
-  h1 {
-    font-size: 2rem;
+    font-size: 1.1rem;
   }
   img {
     object-fit: cover;
@@ -42,27 +39,21 @@
     height: 100%;
   }
 }
-.card-warrior-show:hover {
-  cursor: pointer;
-}
 
 .text-center {
   text-align: center;
 }
 
 .card-warrior-show-description span {
-  margin-left: 0.5rem;
+  color:$bordeaux;
 }
 .btn-book {
-  background-color: #722329;
-  border: 1px solid #A95D60;
-  border-radius: 4px;
-  opacity: 0.85;
-  font-weight: 700;
-  color: white;
-  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 .book-warrior {
   display: flex;
+  h2 {
+    margin-bottom: 1rem;
+  }
 }

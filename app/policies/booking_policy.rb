@@ -28,5 +28,10 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def total_price?
+    true
+  end
+
+
 
 end
