@@ -16,8 +16,7 @@
         <%= render 'shared/navbar' %>
         <div class="content">
           <div class="notif">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
+            <%= render 'shared/flashes' %>
           </div>
           <%= yield %>
         </div>
