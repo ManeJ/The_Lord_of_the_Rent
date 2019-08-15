@@ -1,10 +1,9 @@
 .banner {
   background-size: cover;
-  height: 90vh;
   background-position: center;
   padding: 280px 0;
   margin-top: -16px;
-  filter: contrast(110%) brightness(110%);
+  filter: contrast(130%) brightness(130%);
 }
 
 .banner-text{
@@ -13,20 +12,18 @@
 
 .banner h1 {
   margin-bottom: 40px;
+  margin-left: 40px;
   color: #722329;
   text-shadow: 1px 1px 2px #AE8184;
   font-size: 56px;
   font-weight: black;
+
 }
 
 .banner p {
-  font-size: 28px;
+  font-size: 20px;
   color: white;
   opacity: .7;
-  margin-left: 60px;
+  margin-left: 80px;
   text-shadow: 1px 1px 2px black;
-}
-
-.banner .container {
-  margin-left: 40px;
 }

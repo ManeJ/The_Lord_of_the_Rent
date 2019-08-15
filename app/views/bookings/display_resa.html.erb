@@ -1,0 +1,18 @@
+<h1 class="text-center"> My reservations </h1>
+<div class="d-flex justify-content-center">
+
+  <ul>
+    <% if policy(Booking).display_resa? %>
+      <% @bookings.each do |booking| %>
+      <div class="card-product">
+        <%= cl_image_tag booking.warrior.photo %>
+        <div class="card-product-infos">
+          <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
+          <p>Details...</p>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+

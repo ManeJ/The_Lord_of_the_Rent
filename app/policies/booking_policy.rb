@@ -4,7 +4,11 @@ class BookingPolicy < ApplicationPolicy
       scope.all
     end
   end
-  def display?
+  def display_resa?
+    return true
+  end
+
+  def display_bookings?
     return true
   end
 
@@ -31,6 +35,11 @@ class BookingPolicy < ApplicationPolicy
   def total_price?
     true
   end
+
+  def destroy?
+    true
+  end
+
 
 
 

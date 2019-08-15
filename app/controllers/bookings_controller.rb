@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @restricted_bookings = Booking.where(warrior_id: params[:warrior_id])
   end
 
   def new
@@ -28,20 +30,30 @@ class BookingsController < ApplicationController
     authorize(@booking)
   end
 
-  def delete
+  def destroy
+    if current_user == @booking.user
+      @booking = current_user.bookings.find(params[:id])
+    else
+      @booking = Booking.find(params[:id])
+    end
     @booking.destroy
-
     redirect_to warriors_path
+    authorize(@booking)
   end
 
-  def display
+  def display_resa
     @bookings = current_user.bookings
     authorize(@bookings)
   end
 
+  def display_bookings
+    @warriors = current_user.warriors
+    authorize(@warriors)
+  end
+
   def edit
-    @booking = Booking.find(params[:id])
-    @warrior = current_user.warriors.find(params[:warrior_id])
+    @booking = current_user.bookings.find(params[:id])
+    @warrior = Warrior.find(@booking.warrior_id)
     authorize(@booking)
   end
 
@@ -52,16 +64,23 @@ class BookingsController < ApplicationController
     authorize(@booking)
   end
 
+  def accept
+    @booking = current_user.bookings.find(params[:id])
+    @warrior = Warrior.find(@booking.warrior_id)
+    authorize(@booking)
+    redirect_to warriors_path
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:place, :start_date, :end_date, :total_price)
+    params.require(:booking).permit(:place, :start_date, :end_date, :total_price, :status)
   end
 
   def price_calculator
     @warrior = Warrior.find(params[:warrior_id])
     @price =  @warrior.price
-    @days = (@booking.start_date - @booking.end_date).to_i
+    @days = (@booking.end_date - @booking.start_date).to_i
     @total_price = @price * @days
     @booking.total_price = @total_price
   end
