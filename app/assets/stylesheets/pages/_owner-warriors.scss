@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.owner-warriors-index .cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: auto;
+  grid-gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.card-warrior-index-infos h3:hover p:hover {
+  text-decoration: none;
+}
