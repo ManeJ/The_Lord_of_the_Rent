@@ -1,8 +1,11 @@
 <h1> Bookings </h1>
 <ul>
 <% if policy(Booking).display? %>
+
   <% @bookings.each do |booking| %>
-  <li> <%= booking.place %> </li> <%= link_to 'validate',  edit_warrior_booking_path(booking.warrior_id, booking) %>
+    <li> <%= booking.place %> </li> <%= link_to 'validate',  edit_warrior_booking_path(booking.warrior_id, booking) %>
+    <%= link_to 'delete' ,warrior_booking_path(booking.warrior_id, booking), method: :delete, data: { confirm: "Are you sure?" }%>
   <% end %>
   </ul>
+
 <% end %>
