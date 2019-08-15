@@ -4,8 +4,11 @@
     <%= cl_image_tag @warrior.photo, crop: :fill %>
     <div class="card-warrior-show-infos">
       <div class="card-warrior-show-description">
+      <div class="book-warrior">
         <h1><%= @warrior.nickname %></h1>
-        <p><strong>Price:</strong><span><strong><%= @warrior.price %></strong></span></p>
+        <%= link_to "book", new_warrior_booking_path(params["id"]), class:'btn btn-book' %>
+      </div>
+        <p><strong>Day rate:</strong><span><strong><%= @warrior.price %>€</strong></span></p>
         <p>War is life. Life is fun! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quasi.</p>
       </div>
       <div class="card-warrior-show-attributes">
@@ -15,6 +18,5 @@
         <p><span>Address:</span><%= @warrior.address %></p>
       </div>
     </div>
-    <%= link_to "book", new_warrior_booking_path(params["id"]), class:'btn btn-book' %>
   </div>
 <% end %>
