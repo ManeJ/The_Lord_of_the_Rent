@@ -5,18 +5,17 @@
     <div class="card-warrior-show-infos">
       <div class="card-warrior-show-description">
       <div class="book-warrior">
-        <h1><%= @warrior.nickname %></h1>
-        <%= link_to "book", new_warrior_booking_path(params["id"]), class:'btn btn-book' %>
+        <h2><%= @warrior.nickname %></h2>
       </div>
-        <p><strong>Day rate:</strong><span><strong><%= @warrior.price %>€</strong></span></p>
-        <p>War is life. Life is fun! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quasi.</p>
+        <p><strong><span>Day rate:</span> <%= @warrior.price %>€</strong></p>
       </div>
       <div class="card-warrior-show-attributes">
         <p><span>Species:</span> <%= @warrior.race %></p>
-        <p><span>Specialty:</span><%= @warrior.specialty %></p>
-        <p><span>Weapon:</span><%= @warrior.weapon %></p>
-        <p><span>Address:</span><%= @warrior.address %></p>
+        <p><span>Specialty:</span> <%= @warrior.specialty %></p>
+        <p><span>Weapon:</span> <%= @warrior.weapon %></p>
+        <p><span>Address:</span></br> <%= @warrior.address %></p>
       </div>
+        <%= link_to "Book this warrior", new_warrior_booking_path(params["id"]), class:'btn btn-primary btn-book' %>
     </div>
   </div>
 <% end %>
