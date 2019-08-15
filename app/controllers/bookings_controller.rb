@@ -43,7 +43,9 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
+
+    @booking = current_user.bookings.find(params[:id])
+    @warrior = Warrior.find(@booking.warrior_id)
     authorize(@booking)
   end
 
@@ -54,10 +56,18 @@ class BookingsController < ApplicationController
     authorize(@booking)
   end
 
+  def accept
+    @booking = current_user.bookings.find(params[:id])
+    @warrior = Warrior.find(@booking.warrior_id)
+    authorize(@booking)
+    redirect_to warriors_path
+  end
+
+
   private
 
   def booking_params
-    params.require(:booking).permit(:place, :start_date, :end_date, :total_price)
+    params.require(:booking).permit(:place, :start_date, :end_date, :total_price, :status)
   end
 
   def price_calculator
