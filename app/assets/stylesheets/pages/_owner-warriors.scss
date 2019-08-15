@@ -13,6 +13,8 @@ h1 {
   padding: 2rem;
 }
 
-.card-warrior-index-infos h3:hover p:hover {
+.owner-warriors-index a:hover {
+  opacity: 0.5;
+  transition: opacity .6s;
   text-decoration: none;
 }
