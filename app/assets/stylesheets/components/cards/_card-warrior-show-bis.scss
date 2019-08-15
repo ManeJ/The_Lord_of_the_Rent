@@ -1,0 +1,117 @@
+:root
+  --box-x-padding 2rem
+  --box-y-padding 2rem
+  @media (min-width 40em)
+    --box-y-padding 4rem
+  @media (min-width 60em)
+    --box-x-padding 3rem
+    --box-y-padding 6rem
+
+@media (min-width 40em)
+  section
+    display grid
+    grid-template-rows repeat(3, auto)
+    grid-template-columns 4fr 4fr 5fr
+    grid-template-areas '. . title' 'img img content' 'img img .'
+    max-width 1000px
+    margin-right auto
+    margin-left auto
+
+  // The white box that's drawn behind the content
+  // You can totally place it on the grid!
+  section::after
+    content ''
+    grid-column 2 / -1
+    grid-row 1 / 3
+    position relative
+    z-index -1 // place it behind the other blocks
+    background white
+    box-shadow 0 .2em 1em hsla(20, 20, 20, 20%)
+
+  h1
+    grid-area title
+    padding-top var(--box-y-padding)
+    padding-left var(--box-x-padding)
+
+  .content
+    grid-area content
+    padding-bottom var(--box-y-padding)
+    padding-left var(--box-x-padding)
+    padding-right var(--box-x-padding)
+
+  .img
+    grid-area img
+
+
+// Non-important styles
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700")
+html
+  font-family Montserrat, sans-serif
+  font-size 15px
+  background-color whitesmoke
+
+body
+  padding 1em
+
+h1
+  font-size 4em
+  margin 0 0 1rem
+  font-family serif
+  position relative
+
+  // The line on top of the title
+  &::after
+    content ''
+    position absolute
+    width 6rem
+    background-color hsl(0, 0, 80%)
+    height 2px
+    top 0
+    left 0
+    @media (min-width 40em)
+      left var(--box-x-padding)
+      top var(--box-y-padding)
+
+.content
+  color hsl(0, 0, 30%)
+  margin-bottom var(--box-y-padding)
+  @media (min-width 40em)
+    margin-bottom 0
+
+p
+  margin-top 0
+  margin-bottom var(--box-y-padding)
+  line-height 1.5
+
+.content a
+  text-decoration none
+  border 1px solid hsl(0, 0, 70%)
+  border-radius 1em
+  padding 1em 2em
+  text-transform uppercase
+  font-size 11px
+  font-weight 700
+  letter-spacing .05em
+  color inherit
+  display inline-block
+  background-color white
+
+.img
+  position relative
+  a
+    position absolute
+    left 0
+    bottom 0
+
+img
+  max-width 100%
+  vertical-align middle
+  box-shadow 0 .2em 1.2em hsla(20, 20, 20, 10%)
+
+.attribution
+  position absolute
+  bottom 0
+  right 0
+  background-color #ea4c89 // dribbble pink
+  color white
+  padding .5em 1em
