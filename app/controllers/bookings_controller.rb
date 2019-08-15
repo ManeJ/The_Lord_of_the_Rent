@@ -31,11 +31,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    if current_user == @booking.user
-      @booking = current_user.bookings.find(params[:id])
-    else
-      @booking = Booking.find(params[:id])
-    end
+    @booking = current_user.bookings.find(params[:id])
     @booking.destroy
     redirect_to warriors_path
     authorize(@booking)
@@ -79,10 +75,9 @@ class BookingsController < ApplicationController
 
   def price_calculator
     @warrior = Warrior.find(params[:warrior_id])
-    @price =  @warrior.price
-    @days = (@booking.end_date - @booking.start_date).to_i
+    @price = @warrior.price
+    @days = (@booking.end_date - @booking.start_date).to_i + 1
     @total_price = @price * @days
     @booking.total_price = @total_price
   end
-
 end
