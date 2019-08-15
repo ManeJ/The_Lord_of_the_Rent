@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :bookings
   end
   get 'owner/bookings', to: 'bookings#display'
-  patch 'owner/bookings/:id/accept', to: 'bookings#accept'
+  patch 'owner/bookings/:id', to: 'bookings#accept'
   get 'owner/warriors', to: 'warriors#owner'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
