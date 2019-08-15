@@ -8,7 +8,7 @@
     <%= cl_image_tag booking.warrior.photo %>
     <div class="card-product-infos">
       <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
-      <p>Details...</p>
+      <p><%= booking.status %></p>
     </div>
   </div>
   <% end %>

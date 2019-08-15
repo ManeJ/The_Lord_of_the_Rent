@@ -1,6 +1,6 @@
 <% if policy(Booking).edit? %>
   <%= simple_form_for [@warrior, @booking] do |f| %>
-    <%= f.input :status, as: :select %>
+    <%= f.input :status, collection: ["Validate", "Reject"]  %>
     <%= f.button :submit %>
   <% end %>
 <% end %>
