@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
     @restricted_bookings = Booking.where(warrior_id: params[:warrior_id])
+    @warrior = Warrior.find(params[:warrior_id])
   end
 
   def new

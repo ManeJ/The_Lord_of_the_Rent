@@ -15,7 +15,9 @@
         <p><span>Weapon:</span> <%= @warrior.weapon %></p>
         <p><span>Address:</span></br> <%= @warrior.address %></p>
       </div>
+      <% unless current_user == @warrior.user %>
         <%= link_to "Book this warrior", new_warrior_booking_path(params["id"]), class:'btn btn-primary btn-book' %>
+      <% end %>
     </div>
   </div>
 <% end %>

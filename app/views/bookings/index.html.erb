@@ -1,17 +1,22 @@
-<h1> Bookings </h1>
-<div class="d-flex justify-content-center">
-<ul>
-  <% if policy(Booking).display_resa? %>
-    <% @restricted_bookings.each do |booking| %>
-    <div class="card-product">
-      <%= cl_image_tag booking.warrior.photo %>
-      <div class="card-product-infos">
-        <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
-        <p>Details...</p>
+<div>
+  <div class="d-flex justify-content-center mt-4">
+    <h1 class="warrior-bookings"> Bookings on <%= @warrior.nickname %></h1>
+    <%= cl_image_tag @warrior.photo.url(:thumbnail), class: "rounded ml-3 mb-5" %>
+  </div>
+  <div class="d-flex justify-content-center">
+  <ul>
+    <% if policy(Booking).display_resa? %>
+      <% @restricted_bookings.each do |booking| %>
+      <div class="card-product">
+        <%= cl_image_tag booking.warrior.photo %>
+        <div class="card-product-infos">
+          <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
+          <h1>A REMPLACER PAR UN TABLEAU</h1>
+          <p>Booked by <%= booking.user.first_name %> <%= booking.user.last_name %> on <%= booking.created_at.strftime("%b. %e, %Y") %></p>
+        </div>
       </div>
-    </div>
+      <% end %>
+      </ul>
     <% end %>
-    </ul>
-  <% end %>
+  </div>
 </div>
-
