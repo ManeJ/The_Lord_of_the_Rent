@@ -11,15 +11,17 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <div class="content">
-      <div class="notif">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+    <div class="d-flex flex-column justify-content-between">
+      <%= render 'shared/navbar' %>
+      <div class="content">
+        <div class="notif">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+        <%= yield %>
       </div>
-      <%= yield %>
+      <%= render 'shared/footer' %>
     </div>
-    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
