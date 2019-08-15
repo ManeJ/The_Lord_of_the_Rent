@@ -39,3 +39,9 @@
   top: -20px;
   width: 40px;
 }
+
+.card-warrior-index:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+  text-decoration: none;
+}
