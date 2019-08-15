@@ -43,6 +43,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+
     @booking = current_user.bookings.find(params[:id])
     @warrior = Warrior.find(@booking.warrior_id)
     authorize(@booking)
