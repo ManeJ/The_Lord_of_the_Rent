@@ -1,0 +1,9 @@
+<h1>Page de pur tests</h1>
+<ul>
+  <% @warriors.each do |warrior| %>
+    <li><%= warrior.booking.place %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Bookings on my warriors", bookings_warriors_path, class: "dropdown-item" %>
+<div class="dropdown-divider"></div>

@@ -2,7 +2,7 @@
 <div class="d-flex justify-content-center">
 
   <ul>
-    <% if policy(Booking).display? %>
+    <% if policy(Booking).display_resa? %>
       <% @bookings.each do |booking| %>
       <div class="card-product">
         <%= cl_image_tag booking.warrior.photo %>
