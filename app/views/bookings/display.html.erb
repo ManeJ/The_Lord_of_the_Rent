@@ -2,6 +2,7 @@
 
 <ul>
 <% if policy(Booking).display? %>
+
   <% @bookings.each do |booking| %>
   <div class="card-product">
     <%= cl_image_tag booking.warrior.photo %>
@@ -12,4 +13,5 @@
   </div>
   <% end %>
   </ul>
+
 <% end %>
