@@ -14,22 +14,15 @@
         </div>
         <div class="d-flex booking-card-details-top-actions align-items-baseline">
           <% if current_user == @booking.user %>
-            <%= link_to edit_warrior_booking_path(@booking) do %>
-              <i class="fas fa-pencil-alt"></i>
-              <span class="small-link">Update</span>
-            <% end %>
             <%= link_to warrior_booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="far fa-trash-alt"></i>
               <span class="small-link">Cancel</span>
             <% end %>
           <% else %>
-
-
             <div>
               <%= link_to 'Accept',  owner_bookings_path(@booking), method: :patch %>
               <%= link_to 'Decline',  warrior_booking_path(@booking.warrior, @booking), method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
-
           <% end %>
 
         </div>
