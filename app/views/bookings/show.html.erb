@@ -1,3 +1,39 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
-<%= @booking.place %>
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <h2>Your booking details</h2>
+  <div class="booking-card m-6 p-3 d-block">
+    <%= cl_image_tag @booking.warrior.photo.url(:thumbnail), class: "rounded float-left corner-img" %>
+    <div class="booking-card-details">
+      <div class="booking-card-details-top d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-baseline">
+          <h3><%= @booking.warrior.nickname %></h3>
+          <%= link_to warrior_path(@booking.warrior) do %>
+            <span class="small-link">See warrior details</span>
+          <% end %>
+        </div>
+        <div class="d-flex booking-card-details-top-actions align-items-baseline">
+          <%= link_to edit_warrior_booking_path(@booking) do %>
+            <i class="fas fa-pencil-alt"></i>
+            <span class="small-link">Update</span>
+          <% end %>
+          <%= link_to warrior_booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i>
+            <span class="small-link">Cancel</span>
+          <% end %>
+        </div>
+      </div>
+      <div class="booking-card-details-info">
+        <p><span class="bold-field">Booked for a mission in:</span></br><%= @booking.place %></p>
+        <p>
+          <% if @booking.start_date == @booking.end_date %>
+            <span class="bold-field">Mission date:</span></br><%= @booking.start_date.strftime("%b. %e, %Y") %>
+          <% else %>
+            <span class="bold-field">Mission dates:</span></br>From <%= @booking.start_date.strftime("%b. %e, %Y") %> to <%= @booking.end_date.strftime("%b. %e, %Y") %>
+          <% end %>
+        </p>
+        <p><span class="bold-field">Days:</span> <%= (@booking.end_date - @booking.start_date).to_i %></p>
+        <p id="booking-price">Total price: <%= @booking.total_price %> €</p>
+      </div>
+    </div>
+  </div>
+</div>
+
