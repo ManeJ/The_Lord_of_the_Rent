@@ -31,19 +31,27 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = current_user.bookings.find(params[:id])
+    if current_user == @booking.user
+      @booking = current_user.bookings.find(params[:id])
+    else
+      @booking = Booking.find(params[:id])
+    end
     @booking.destroy
     redirect_to warriors_path
     authorize(@booking)
   end
 
-  def display
+  def display_resa
     @bookings = current_user.bookings
     authorize(@bookings)
   end
 
-  def edit
+  def display_bookings
+    @warriors = current_user.warriors
+    authorize(@warriors)
+  end
 
+  def edit
     @booking = current_user.bookings.find(params[:id])
     @warrior = Warrior.find(@booking.warrior_id)
     authorize(@booking)
@@ -62,7 +70,6 @@ class BookingsController < ApplicationController
     authorize(@booking)
     redirect_to warriors_path
   end
-
 
   private
 

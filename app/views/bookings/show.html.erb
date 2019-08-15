@@ -20,7 +20,7 @@
             <% end %>
           <% else %>
             <div>
-              <%= link_to 'Accept',  owner_bookings_path(@booking), method: :patch %>
+              <%= link_to 'Accept',  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Accepted"}), method: :patch %>
               <%= link_to 'Decline',  warrior_booking_path(@booking.warrior, @booking), method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
           <% end %>
