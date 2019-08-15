@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @restricted_bookings = Booking.where(warrior_id: params[:warrior_id])
   end
 
   def new
@@ -28,7 +30,7 @@ class BookingsController < ApplicationController
     authorize(@booking)
   end
 
-  def delete
+  def destroy
     @booking.destroy
 
     redirect_to warriors_path
