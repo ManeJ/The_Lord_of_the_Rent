@@ -48,7 +48,6 @@ class BookingsController < ApplicationController
     authorize(@booking)
   end
 
-
   private
 
   def booking_params
