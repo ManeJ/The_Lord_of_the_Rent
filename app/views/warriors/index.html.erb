@@ -1,7 +1,5 @@
-<div id="warriors-header">
-  <h1>Find a warrior</h1>
-</div>
-<div class='warriors-index'>
+<h1>Find a warrior</h1>
+<div class='owner-warriors-index'>
   <div class="cards-grid">
     <% @warriors.each do |warrior| %>
       <%= link_to warrior_path(warrior) do %>
@@ -17,12 +15,5 @@
       </div>
     <% end %>
     <% end %>
-  </div>
-  <div
-    id="map"
-    style="width: 100%;
-    height: 80vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

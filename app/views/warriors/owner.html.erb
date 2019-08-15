@@ -1,21 +1,50 @@
 <h1>My warriors </h1>
-<div class='warriors-index'>
-  <div class="cards-grid">
-    <% if policy(Warrior).owner? %>
-      <% @warriors.each do |warrior| %>
-        <%= link_to warrior_path(warrior) do %>
-          <div class="card-warrior-index">
-            <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
-            <div class="card-warrior-index-infos">
-              <div>
-                <h3><%= warrior.nickname %></h3>
-                <p><%= warrior.race %></p>
+
+<div class="container">
+  <div class="unavailable">
+  <h2>On a quest</h2>
+    <div class='owner-warriors-index'>
+      <div class="cards-grid">
+        <% if policy(Warrior).owner? %>
+          <% @warriors.each do |warrior| %>
+            <%= link_to warrior_path(warrior) do %>
+              <div class="card-warrior-index">
+                <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+                <div class="card-warrior-index-infos">
+                  <div>
+                    <h3><%= warrior.nickname %></h3>
+                    <p><%= warrior.race %></p>
+                  </div>
+                  <h3 class="card-warrior-index-pricing"><%= warrior.price %>€</h3>
+                </div>
               </div>
-              <h3 class="card-warrior-index-pricing"><%= warrior.price %>€</h3>
-            </div>
-          </div>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="available">
+  <h2>Waiting for a quest</h2
+    <div class='owner-warriors-index'>
+      <div class="cards-grid">
+        <% if policy(Warrior).owner? %>
+          <% @warriors.each do |warrior| %>
+            <%= link_to warrior_path(warrior) do %>
+              <div class="card-warrior-index">
+                <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+                <div class="card-warrior-index-infos">
+                  <div>
+                    <h3><%= warrior.nickname %></h3>
+                    <p><%= warrior.race %></p>
+                  </div>
+                  <h3 class="card-warrior-index-pricing"><%= warrior.price %>€</h3>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
