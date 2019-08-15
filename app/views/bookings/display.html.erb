@@ -1,17 +1,18 @@
 <h1> Bookings </h1>
-
+<div class="d-flex justify-content-center">
 <ul>
-<% if policy(Booking).display? %>
 
-  <% @bookings.each do |booking| %>
-  <div class="card-product">
-    <%= cl_image_tag booking.warrior.photo %>
-    <div class="card-product-infos">
-      <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
-      <p><%= booking.status %></p>
+  <% if policy(Booking).display? %>
+    <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <%= cl_image_tag booking.warrior.photo %>
+      <div class="card-product-infos">
+        <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
+        <p>Details...</p>
+      </div>
     </div>
-  </div>
+    <% end %>
   <% end %>
   </ul>
+</div>
 
-<% end %>
