@@ -1,10 +1,16 @@
 <h1> Bookings </h1>
+
 <ul>
 <% if policy(Booking).display? %>
 
   <% @bookings.each do |booking| %>
-    <li> <%= booking.place %> </li> <%= link_to 'validate',  edit_warrior_booking_path(booking.warrior_id, booking) %>
-    <%= link_to 'delete' ,warrior_booking_path(booking.warrior_id, booking), method: :delete, data: { confirm: "Are you sure?" }%>
+  <div class="card-product">
+    <%= cl_image_tag booking.warrior.photo %>
+    <div class="card-product-infos">
+      <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
+      <p>Details...</p>
+    </div>
+  </div>
   <% end %>
   </ul>
 
