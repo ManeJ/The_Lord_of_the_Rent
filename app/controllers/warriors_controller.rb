@@ -1,6 +1,7 @@
 class WarriorsController < ApplicationController
   before_action :set_warrior, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, :only => :index
+  skip_before_action :authenticate_user!, :only => :show
 
   def index
     @warriors = policy_scope(Warrior).order(created_at: :desc)
