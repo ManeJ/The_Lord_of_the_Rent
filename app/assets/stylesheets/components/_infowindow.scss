@@ -120,8 +120,15 @@
         text-align:left;
         width:100%;
         font-size: 13px;
+        position: relative;
         td {
           padding-bottom: 16px;
+        }
+        .btn-info {
+          font-size: 13px;
+          position: absolute;
+          bottom: 18px;
+          right: 12px;
         }
       }
       p, table{
