@@ -1,26 +1,33 @@
  .alert {
-  padding: 16px 24px;
+  position: absolute;
+  top: 8px;
+  z-index: 3000;
+  padding: 8px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   background: white;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
-  margin: 0px 400px 0px 400px;
 }
 
 .alert-info {
-  border: 2px solid #1EDD88;
+  border: 3px solid #8DB438;
+  background-color: #DAE9B8;
 }
 
 .alert-warning {
-  border: 2px solid #FFC65A;
+  border: 3px solid #FA7921;
+  background-color: #FDCEAE;
 }
 
 .alert-danger {
-  border: 2px solid #FD1015;
+  border: 3px solid #C42021;
+  background-color: #E9ADAE;
 }
 
-.notif {
-  position: absolue;
+.content {
+  position: relative;
 }
