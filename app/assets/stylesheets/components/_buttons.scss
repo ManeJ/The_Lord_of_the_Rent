@@ -1,19 +1,20 @@
 .btn-ghost {
   color: #DD9811;
-  border: 1px solid #DD9811;
+  background-color: #91845f;
+  border: 2px solid #DD9811;
   padding: 8px 24px;
   margin: 48px 64px;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: 500;
   font-size: 32px;
   opacity: 0.6;
   margin-left: 120px;
   transition: opacity 0.3s ease;
+  text-shadow: 0 0 24px #000000;
 }
 
 .btn-ghost:hover {
   opacity: 1;
-  color: #DD9811;
-  font-weight: 200;
-  border: 2px solid #DD9811;
+  color: #ce9804;
+  border: 2px solid #ce9804;
 }
