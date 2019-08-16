@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
-    @restricted_bookings = Booking.where(warrior_id: params[:warrior_id])
+    @restricted_bookings = Booking.where(warrior_id: params[:warrior_id]).order(created_at: :desc)
     @warrior = Warrior.find(params[:warrior_id])
   end
 
@@ -62,10 +62,11 @@ class BookingsController < ApplicationController
   end
 
   def accept
+    raise
     @booking = current_user.bookings.find(params[:id])
     @warrior = Warrior.find(@booking.warrior_id)
-    authorize(@booking)
     redirect_to warriors_path
+    authorize(@booking)
   end
 
   private
