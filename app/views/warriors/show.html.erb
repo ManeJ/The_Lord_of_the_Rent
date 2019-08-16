@@ -1,45 +1,29 @@
 <% if policy(Warrior).show? %>
-<div class="container">
-<<<<<<< HEAD
- <div class="card-warrior-show">
-   <%= cl_image_tag @warrior.photo, crop: :fill %>
-   <div class="card-warrior-show-infos">
-     <div class="card-warrior-show-description">
-     <div class="book-warrior">
-       <h2><%= @warrior.nickname %></h2>
-     </div>
-       <p><strong><span>Day rate:</span> <%= @warrior.price %>€</strong></p>
-     </div>
-     <div class="card-warrior-show-attributes">
-       <p><span>Species:</span> <%= @warrior.race %></p>
-       <p><span>Specialty:</span> <%= @warrior.specialty %></p>
-       <p><span>Weapon:</span> <%= @warrior.weapon %></p>
-       <p><span>Address:</span></br> <%= @warrior.address %></p>
-     </div>
-       <%= link_to "Book this warrior", new_warrior_booking_path(params["id"]), class:'btn btn-primary btn-book' %>
-   </div>
- </div>
-=======
-  <div class="card-warrior-show">
-    <%= cl_image_tag @warrior.photo, crop: :fill %>
-    <div class="card-warrior-show-infos">
-      <div class="card-warrior-show-description">
-      <div class="book-warrior">
-        <h2><%= @warrior.nickname %></h2>
-      </div>
-        <p><strong><span>Day rate:</span> <%= @warrior.price %>€</strong></p>
-      </div>
-      <div class="card-warrior-show-attributes">
-        <p><span>Species:</span> <%= @warrior.race %></p>
-        <p><span>Specialty:</span> <%= @warrior.specialty %></p>
-        <p><span>Weapon:</span> <%= @warrior.weapon %></p>
-        <p><span>Address:</span></br> <%= @warrior.address %></p>
-      </div>
-      <% unless current_user == @warrior.user %>
+  <div class="container">
+
+   <div class="card-warrior-show">
+
+     <%= cl_image_tag @warrior.photo, crop: :fill %>
+
+     <div class="card-warrior-show-infos">
+        <div class="card-warrior-show-description">
+          <div class="book-warrior">
+            <h2><%= @warrior.nickname %></h2>
+          </div>
+          <p><strong><span>Day rate:</span> <%= @warrior.price %>€</strong></p>
+        </div>
+        <div class="card-warrior-show-attributes">
+         <p><span>Species:</span> <%= @warrior.race %></p>
+         <p><span>Specialty:</span> <%= @warrior.specialty %></p>
+         <p><span>Weapon:</span> <%= @warrior.weapon %></p>
+         <p><span>Address:</span></br> <%= @warrior.address %></p>
+        </div>
         <%= link_to "Book this warrior", new_warrior_booking_path(params["id"]), class:'btn btn-primary btn-book' %>
-      <% end %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Back to warriors", warriors_path %>
     </div>
   </div>
->>>>>>> 50a671053d4046bb6f0b4c1c232afb8279594b49
 <% end %>
 
