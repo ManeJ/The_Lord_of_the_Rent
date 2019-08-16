@@ -7,16 +7,18 @@
           <h6><%= warrior.nickname %></h6>
           <p><%= warrior.price %> € per day</p>
         </div>
+        <%= link_to new_warrior_booking_path(warrior) do %>
         <div class="d-flex justify-content-center align-items-center warrior-info">
-          <%= link_to "#" do %>
             <i class="fas fa-cart-plus"></i>
-          <% end %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
   <div class="inside">
-    <div class="icon"><i class="far fa-list-alt"></i></div>
+    <%= link_to new_warrior_booking_path(warrior), class:"icon" do %>
+      <i class="far fa-list-alt"></i>
+    <% end %>
     <div class="contents">
       <table>
         <tr>
@@ -29,6 +31,7 @@
         </tr>
         <tr>
           <th>Weapon</th>
+          <th><%= link_to "Full details", warrior_path(warrior), class:"btn btn-info" %></th>
         </tr>
         <tr>
           <td><%= warrior.weapon %></td>
