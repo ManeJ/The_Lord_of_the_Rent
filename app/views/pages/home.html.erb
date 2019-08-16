@@ -4,7 +4,8 @@
     <a class="btn btn-ghost" href="/warriors">Find a Mercenary</a>
 </div>
 <h2 class="text-center mt-3">Check out these awesome warriors you might want to recruit!</h2>
-<div class="cards-grid">
+<div class="d-flex justify-content-center">
+  <div class="cards-grid">
   <% @warriors_sample.each do |warrior|%>
     <%= link_to warrior_path(warrior) do %>
     <div class="card-warrior-index">
@@ -19,5 +20,6 @@
     </div>
   <% end %>
   <% end %>
+</div>
 </div>
 
