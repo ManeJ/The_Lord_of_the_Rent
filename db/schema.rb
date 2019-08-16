@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_14_100745) do
     t.date "start_date"
     t.date "end_date"
     t.integer "total_price"
-    t.string "status", default: "pending"
+    t.string "status", default: "Pending"
     t.bigint "user_id"
     t.bigint "warrior_id"
     t.datetime "created_at", null: false
