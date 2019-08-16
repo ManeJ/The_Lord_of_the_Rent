@@ -1,22 +1,47 @@
 <div>
-  <div class="d-flex justify-content-center mt-4">
-    <h1 class="warrior-bookings"> Bookings on <%= @warrior.nickname %></h1>
-    <%= cl_image_tag @warrior.photo.url(:thumbnail), class: "rounded ml-3 mb-5" %>
+  <div class="d-flex justify-content-center align-items-center mt-4 mb-5">
+    <div class="text-center">
+      <h2 class="warrior-bookings">Bookings on <%= @warrior.nickname %></h2>
+      <%= link_to "Back to my warriors", owner_warriors_path, class:"small-link" %>
+    </div>
+    <%= cl_image_tag @warrior.photo.url(:thumbnail), class: "rounded ml-5" %>
   </div>
-  <div class="d-flex justify-content-center">
-  <ul>
+  <div class="d-flex flex-column align-items-center">
     <% if policy(Booking).display_resa? %>
-      <% @restricted_bookings.each do |booking| %>
-      <div class="card-product">
-        <%= cl_image_tag booking.warrior.photo %>
-        <div class="card-product-infos">
-          <h2><%= link_to booking.warrior.nickname, warrior_booking_path(booking.warrior, booking) %></h2>
-          <h1>A REMPLACER PAR UN TABLEAU</h1>
-          <p>Booked by <%= booking.user.first_name %> <%= booking.user.last_name %> on <%= booking.created_at.strftime("%b. %e, %Y") %></p>
-        </div>
-      </div>
-      <% end %>
-      </ul>
+      <table class="table table-hover table-secondary">
+        <thead>
+          <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Ordered on</th>
+            <th scope="col">By</th>
+            <th scope="col">Total price</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @restricted_bookings.each do |booking| %>
+            <tr>
+              <td><%= booking.start_date.strftime("%m/%d/%Y") %></td>
+              <td><%= booking.end_date.strftime("%m/%d/%Y") %></td>
+              <td><%= (booking.end_date - booking.start_date).to_i + 1 %>
+                <% if (booking.end_date - booking.start_date).to_i + 1 == 1 %>
+                  day
+                <% else %>
+                  days
+                <% end %>
+              </td>
+              <td><%= booking.created_at.strftime("%m/%d/%Y") %></td>
+              <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+              <td><%= number_with_delimiter(booking.total_price, :delimiter => '.') %> €</td>
+              <td><%= booking.status %></td>
+              <td><%= link_to "See details", warrior_booking_path(booking.warrior_id, booking), class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
-  <h2 class="mt-4">Your booking details</h2>
+  <h2 class="mt-4">Booking details</h2>
   <div class="booking-card m-6 p-3 d-block">
     <%= cl_image_tag @booking.warrior.photo.url(:thumbnail), class: "rounded float-left corner-img" %>
     <div class="booking-card-details">
@@ -19,10 +19,14 @@
               <span class="small-link">Cancel</span>
             <% end %>
           <% else %>
-            <div>
-              <%= link_to 'Accept',  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Accepted"}), method: :patch %>
-              <%= link_to 'Decline',  warrior_booking_path(@booking.warrior, @booking), method: :delete, data: { confirm: "Are you sure?" } %>
-            </div>
+            <% if @booking.status.downcase == "pending" %>
+              <div>
+                <%= link_to 'Accept',  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Accepted"}), method: :patch %>
+                <%= link_to 'Decline',  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Declined"}), method: :patch %>
+              </div>
+            <% else %>
+              <%= @booking.status %>
+            <% end %>
           <% end %>
 
         </div>
@@ -40,10 +44,16 @@
           <p><span class="bold-field">Duration:</span> <%= (@booking.end_date - @booking.start_date).to_i + 1 %> days</p>
         <% end %>
 
-        <p id="booking-price">Total price: <%= @booking.total_price %> €</p>
+        <p id="booking-price">Total price: <%= number_with_delimiter(@booking.total_price, :delimiter => '.') %> €</p>
       </div>
     </div>
   </div>
-  <%= link_to "Back to warriors", warriors_path, class: "mb-4" %>
+  <% if current_user == @booking.user %>
+    <%= link_to "Back to warriors", warriors_path %>
+    <%= link_to "See all my reservations", owner_bookings_path, class: "mb-4" %>
+  <% else %>
+    <%= link_to "Back to bookings on #{@booking.warrior.nickname}", warrior_bookings_path(@booking.warrior_id) %>
+    <%= link_to "Back to my warriors", owner_warriors_path, class: "mb-4" %>
+  <% end %>
 </div>
 
