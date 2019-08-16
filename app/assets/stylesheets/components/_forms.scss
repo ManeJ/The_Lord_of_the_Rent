@@ -43,6 +43,23 @@
   }
 }
 
+.total-box {
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f4;
+  border: 1px solid #ced4da;
+  font-weight: 500;
+  font-size: 16px;
+  vertical-align: middle;
+  margin: 8px 0;
+  text-align: center
+}
+
+.price {
+  display: flex;
+  margin-left: 24px;
+}
+
 .form-reset-pw {
   background-color: white;
   color: black;

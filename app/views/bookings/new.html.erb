@@ -16,12 +16,15 @@
         <%= f.input :place, label: "Mission location" %>
         <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <p id = "price"></p>
+        <div class="total-box">
+          <p  class="m-0 py-2" id="total">TOTAL : </p>
+          <div class="price py-2">
+            <p class="m-0" id = "price"></p>
+            <p class="m-0"> €</p>
+          </div>
+        </div>
         <%= f.submit "Book", class: "btn btn-primary"%>
       <% end %>
     <% end %>
-  </div>
-  <div>
-    <p id= "price"> </p>
   </div>
 </div>

@@ -10,7 +10,11 @@ const total_price_completion = () => {
     const days = (new Date(end_date).getTime() - new Date(start_date).getTime()) / (1000 * 3600 * 24);
     const warrior_price = parseInt(document.querySelector('.card-warrior-index-pricing span').innerText);
     const total_price = warrior_price * days;
-    return price.innerText = total_price;
+    if (isNaN(total_price)) {
+    return price.innerText = '0'
+  } else {
+  return price.innerText = total_price;
+  }
   });
 
 };
@@ -20,10 +24,14 @@ end_date_column.addEventListener("mousemove", () => {
   price.innerText = '';
   const start_date = document.querySelector('input[name="booking[start_date]"').value;
   const end_date = document.querySelector('input[name="booking[end_date]"').value
-  const days = (new Date(end_date).getTime() - new Date(start_date).getTime()) / (1000 * 3600 * 24);
+  const days = (new Date(end_date).getTime() - new Date(start_date).getTime()) / (1000 * 3600 * 24) + 1;
   const warrior_price = parseInt(document.querySelector('.card-warrior-index-pricing span').innerText);
   const total_price = warrior_price * days;
+  if (isNaN(total_price)) {
+    return price.innerText = '0'
+  } else {
   return price.innerText = total_price;
+  }
 });
 }
 export {total_price_completion}
