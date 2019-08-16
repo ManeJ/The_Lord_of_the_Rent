@@ -20,7 +20,6 @@
     .top{
       height: 70%;
       width:100%;
-      background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg) no-repeat center center;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
@@ -30,12 +29,11 @@
       width: 200%;
       height: 30%;
       transition: transform 0.5s;
-      &.clicked{
-        transform: translateX(-50%);
-      }
-      h1{
+      h6{
           margin:0;
-          padding:0;
+          padding-top: 4px;
+          font-size: 0.8rem;
+          font-weight: bold;
       }
       p{
           margin:0;
@@ -44,27 +42,27 @@
       .left{
         height:100%;
         width: 50%;
-        background: #f4f4f4;
+        background: $grey;
         position:relative;
         float:left;
         .details{
           padding: 8px 16px;
           float: left;
-          width: calc(60% - 32px);
+          width: calc(65% - 8px);
         }
         .warrior-info{
           float:right;
-          width: calc(40% - 2px);
+          width: calc(35% - 2px);
           height:100%;
           background: #f1f1f1;
           transition: background 0.5s;
           border-left:solid thin rgba(0,0,0,0.1);
           &:hover{
-            background: #A6CDDE;
+            background: rgba(43,49,55,0.2);
           }
           &:hover i{
             transform: scale(1.5);
-            color:#00394B;
+            color:$bordeaux;
           }
         }
       }
@@ -73,11 +71,12 @@
 
   .fas {
     font-size: 1.5rem;
+    color: $anthra;
   }
 
   .inside{
     z-index:9;
-    background: $anthra;
+    background: $bordeaux;
     width:70px;
     height:70px;
     position: absolute;
@@ -120,6 +119,10 @@
       table{
         text-align:left;
         width:100%;
+        font-size: 13px;
+        td {
+          padding-bottom: 16px;
+        }
       }
       p, table{
         color: white;
