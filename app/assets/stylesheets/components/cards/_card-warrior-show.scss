@@ -1,35 +1,27 @@
 .container {
-  padding: 3rem;
-  height: 80vh;
+  padding-bottom: 2rem;
 }
 .card-warrior-show {
-  position: absolute;
-  left: -10rem;
+  display: flex;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 1rem rgba(0,0,0,0.2);
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
-  height: 450px;
-  width: 600px;
-  padding-bottom: 1rem;
+  height: 80vh ;
 }
-
 .card-warrior-show-attributes span{
   color: #232b2b;
   font-weight: 700;
 }
-
 .card-warrior-show-attributes i {
   font-size: 1rem;
   margin: 0 0.5rem;
 }
-
 .card-warrior-show-infos {
   margin: 1rem;
   padding: 1rem;
 }
-
 .card-warrior-show-infos span {
   color:$bordeaux;
 }
@@ -43,45 +35,18 @@
     height: 100%;
   }
 }
-
 .text-center {
   text-align: center;
 }
-
 .card-warrior-show-description span {
   color:$bordeaux;
 }
 .btn-book {
   margin-top: 1rem;
 }
-
 .book-warrior {
   display: flex;
   h2 {
     margin-bottom: 1rem;
   }
-}
-
-.card-warrior-img {
-  position: absolute;
-  left: 20rem;;
-  top: -4rem;
-  object-fit: cover;
-  background-position: center;
-  height:300px ;
-  width: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: bottom;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  z-index: 5;
-}
-
-.d-flex  {
-  margin-bottom: 2rem;
 }
