@@ -6,7 +6,7 @@
       <% else %>
       <%= link_to warrior_path(warrior) do %>
       <div class="card-warrior-index">
-        <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+        <%= cl_image_tag warrior.photo, crop: :fill, gravity: :face, class: 'card-warrior-index-img'%>
       <div class="card-warrior-index-infos">
         <div>
           <h3><%= warrior.nickname %></h3>

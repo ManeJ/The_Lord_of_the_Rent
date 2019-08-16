@@ -1,0 +1,4 @@
+{
+  "html-css-class-completion.enableEmmetSupport": true
+  "emmet.includeLanguages": { "erb":"html" }
+}
