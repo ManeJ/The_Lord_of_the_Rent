@@ -57,3 +57,18 @@
   margin-right: 16px;
   font-size: 1.3rem;
 }
+
+.booking-card-details-top-actions {
+  .btn {
+    color: $anthra;
+    margin-bottom: 8px;
+    margin-right: 8px;
+  }
+}
+
+.booking-card-details-top-actions {
+  .btn:hover {
+    color: white;
+  }
+}
+

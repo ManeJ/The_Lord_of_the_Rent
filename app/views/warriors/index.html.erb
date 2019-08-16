@@ -1,10 +1,12 @@
-<h2 class="text-center mt-4">Find a warrior</h2>
+<h2 class="text-center mt-5">Find a warrior</h2>
 <div class='warriors-index'>
   <div class="cards-grid">
     <% @warriors.each do |warrior| %>
+      <% if current_user.warriors.include?(warrior) %>
+      <% else %>
       <%= link_to warrior_path(warrior) do %>
       <div class="card-warrior-index">
-        <%= cl_image_tag warrior.photo, crop: :fill, class: 'card-warrior-index-img'%>
+        <%= cl_image_tag warrior.photo, crop: :fill, gravity: :face, class: 'card-warrior-index-img'%>
       <div class="card-warrior-index-infos">
         <div>
           <h3><%= warrior.nickname %></h3>
@@ -13,6 +15,7 @@
       <h3 class="card-warrior-index-pricing"><%= warrior.price %>€</h3>
       </div>
       </div>
+    <% end %>
     <% end %>
     <% end %>
   </div>

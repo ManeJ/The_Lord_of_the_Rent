@@ -1,4 +1,4 @@
-<div class="d-flex flex-column justify-content-center align-items-center">
+<div class="d-flex flex-column justify-content-center align-items-center mt-4">
   <h2 class="mt-4">Booking details</h2>
   <div class="booking-card m-6 p-3 d-block">
     <%= cl_image_tag @booking.warrior.photo.url(:thumbnail), class: "rounded float-left corner-img" %>
@@ -21,8 +21,8 @@
           <% else %>
             <% if @booking.status.downcase == "pending" %>
               <div>
-                <%= link_to 'Accept',  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Accepted"}), method: :patch %>
-                <%= link_to 'Decline',  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Declined"}), method: :patch %>
+                <%= link_to "Accept",  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Accepted"}), method: :patch, class: "btn btn-success" %>
+                <%= link_to 'Decline',  warrior_booking_path(@booking.warrior, @booking, booking: { status: "Declined"}), method: :patch, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
               </div>
             <% else %>
               <%= @booking.status %>
