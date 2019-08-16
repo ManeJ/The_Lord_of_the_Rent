@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    price_calculator
     authorize(@booking)
   end
 

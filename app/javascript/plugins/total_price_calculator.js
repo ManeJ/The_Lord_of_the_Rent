@@ -1,37 +1,30 @@
-const start_date_1i = document.getElementById("booking_start_date_1i");
-const start_date_2i = document.getElementById("booking_start_date_2i");
-const start_date_3i = document.getElementById("booking_start_date_3i");
-const end_date_1i = document.getElementById("booking_end_date_1i");
-const end_date_2i = document.getElementById("booking_end_date_2i");
-const end_date_3i = document.getElementById("booking_end_date_3i");
-const total_price = document.getElementById("new_booking");
+const start_date_column = document.getElementById('booking_start_date')
+const end_date_column = document.getElementById('booking_end_date')
+const price = document.getElementById('price');
 
 const total_price_completion = () => {
-start_date_1i.addEventListener("click", () => {
-  document.getElementById('price').innerHTML = '<%= (@booking.end_date - @booking.start_date).to_i %>';
-});
-
-start_date_2i.addEventListener("click", () => {
-  document.getElementById('price').innerHTML = '<%= (@booking.end_date - @booking.start_date).to_i %>';
-});
-
-start_date_3i.addEventListener("click", () => {
-  document.getElementById('price').innerHTML = ''
-  document.getElementById('price').innerHTML = '<%= (@booking.end_date - @booking.start_date).to_i %>';
-});
-
-end_date_1i.addEventListener("click", () => {
-  document.getElementById('price').innerHTML = '<%= (@booking.end_date - @booking.start_date).to_i %>';
-});
-
-end_date_2i.addEventListener("click", () => {
-  document.getElementById('price').innerHTML = '<%= (@booking.end_date - @booking.start_date).to_i %>';
-});
-
-end_date_3i.addEventListener("click", () => {
-  document.getElementById('price').innerHTML = '<%= (@booking.end_date - @booking.start_date).to_i %>';
-});
+  start_date_column.addEventListener("mousemove", () => {
+    price.innerText = '';
+    const start_date = document.querySelector('input[name="booking[start_date]"').value;
+    const end_date = document.querySelector('input[name="booking[end_date]"').value
+    const days = (new Date(end_date).getTime() - new Date(start_date).getTime()) / (1000 * 3600 * 24);
+    const warrior_price = parseInt(document.querySelector('.card-warrior-index-pricing span').innerText);
+    const total_price = warrior_price * days;
+    return price.innerText = total_price;
+  });
 
 };
 
+const total_price_completion_1 = () => {
+end_date_column.addEventListener("mousemove", () => {
+  price.innerText = '';
+  const start_date = document.querySelector('input[name="booking[start_date]"').value;
+  const end_date = document.querySelector('input[name="booking[end_date]"').value
+  const days = (new Date(end_date).getTime() - new Date(start_date).getTime()) / (1000 * 3600 * 24);
+  const warrior_price = parseInt(document.querySelector('.card-warrior-index-pricing span').innerText);
+  const total_price = warrior_price * days;
+  return price.innerText = total_price;
+});
+}
 export {total_price_completion}
+export {total_price_completion_1}

@@ -7,15 +7,16 @@
         <h3><%= @warrior.nickname %></h3>
         <p><%= @warrior.race %></p>
       </div>
-      <h3 class="card-warrior-index-pricing"><%= @warrior.price %>€ per day</h3>
+      <h3 class="card-warrior-index-pricing"><span><%= @warrior.price %></span>€ per day</h3>
     </div>
   </div>
   <div class="d-flex justify-content-center form-book-warrior", id = "warrior_card_booking">
     <% if policy(Booking).new? %>
       <%= simple_form_for [@warrior, @booking] do |f| %>
         <%= f.input :place, label: "Mission location" %>
-        <%= f.input :start_date, id: "start_date" %>
-        <%= f.input :end_date, id: "end_date" %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <p id = "price"></p>
         <%= f.submit "Book", class: "btn btn-primary"%>
       <% end %>
     <% end %>
