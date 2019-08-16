@@ -1,0 +1,135 @@
+.wrapper{
+  width: 200px;
+  height: 200px;
+  background: white;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+  &:hover{
+    transform: scale(1);
+    box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+  }
+
+  .content{
+    width:100%;
+    height:100%;
+    .top{
+      height: 70%;
+      width:100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+    }
+    .bottom{
+      width: 200%;
+      height: 30%;
+      transition: transform 0.5s;
+      h6{
+          margin:0;
+          padding-top: 4px;
+          font-size: 0.8rem;
+          font-weight: bold;
+      }
+      p{
+          margin:0;
+          padding:0;
+      }
+      .left{
+        height:100%;
+        width: 50%;
+        background: $grey;
+        position:relative;
+        float:left;
+        .details{
+          padding: 8px 16px;
+          float: left;
+          width: calc(65% - 8px);
+        }
+        .warrior-info{
+          float:right;
+          width: calc(35% - 2px);
+          height:100%;
+          background: #f1f1f1;
+          transition: background 0.5s;
+          border-left:solid thin rgba(0,0,0,0.1);
+          &:hover{
+            background: rgba(43,49,55,0.2);
+          }
+          &:hover i{
+            transform: scale(1.5);
+            color:$bordeaux;
+          }
+        }
+      }
+    }
+  }
+
+  .fas {
+    font-size: 1.5rem;
+    color: $anthra;
+  }
+
+  .inside{
+    z-index:9;
+    background: $bordeaux;
+    width:70px;
+    height:70px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    border-radius: 0px 0px 25% 25%;
+    transition: all 0.5s, border-radius 2s, top 1s;
+    overflow: hidden;
+    .icon{
+      position:absolute;
+      right:32px;
+      top:32px;
+      color:white;
+      opacity: 1;
+      font-size: 1.5rem;
+    }
+    &:hover{
+      width:100%;
+      right:0;
+      top:0;
+      border-radius: 0;
+      height:70%;
+      .icon{
+        opacity: 0;
+        right:15px;
+        top:15px;
+      }
+      .contents{
+        opacity: 1;
+        transform: scale(1);
+        transform: translateY(0);
+      }
+    }
+    .contents{
+      padding: 5%;
+      opacity: 0;
+      transform: scale(0.5);
+      transform: translateY(-200%);
+      transition: opacity 0.2s, transform 0.8s;
+      table{
+        text-align:left;
+        width:100%;
+        font-size: 13px;
+        td {
+          padding-bottom: 16px;
+        }
+      }
+      p, table{
+        color: white;
+      }
+      p{
+        font-size:13px;
+      }
+    }
+  }
+}

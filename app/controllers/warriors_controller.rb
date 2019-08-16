@@ -8,7 +8,9 @@ class WarriorsController < ApplicationController
     @markers = @warriors.map do |warrior|
       {
         lat: warrior.latitude,
-        lng: warrior.longitude
+        lng: warrior.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { warrior: warrior }),
+        image_url: helpers.asset_url('skull-color.png')
       }
     end
   end
