@@ -2,7 +2,7 @@
 <div class='warriors-index'>
   <div class="cards-grid">
     <% @warriors.each do |warrior| %>
-      <% if current_user.warriors.include?(warrior) %>
+      <% if user_signed_in? && current_user.warriors.include?(warrior) %>
       <% else %>
       <%= link_to warrior_path(warrior) do %>
       <div class="card-warrior-index">
